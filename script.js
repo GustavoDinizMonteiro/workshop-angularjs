@@ -34,3 +34,12 @@ var i = 0;
 while (i < things.length) {
     console.log(things[i++]);
 }
+
+// JavaScript Object Notation - JSON
+// Objetos javascript
+
+var person = {
+    name: 'Matheus',
+    age: '47',
+    isTeacher: true
+};
