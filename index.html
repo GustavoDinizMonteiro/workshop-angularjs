@@ -1,14 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="example">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página inicial</title>
+    <title>Pagina inicial</title>
 
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="js/controller.js"></script>
 </head>
-<body>
 
+<body ng-controller="controller">
+    <div>
+        <h3>{{app}}</h3>
+        <table ng-show="contatos.length > 0">
+            <tr>
+                <th></th>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>Operadora</th>
+                <th></th>
+            </tr>
+            <tr ng-repeat="contato in contatos">
+                <td><input type="checkbox" ng-model="contato.selecionado" /></td>
+                <td>{{contato.nome}}</td>
+                <td>{{contato.telefone}}</td>
+                <td>{{contato.operadora.nome}}</td>
+                <td>
+                    <div style="width: 20px; height: 20px;" ng-style="{'background-color': contato.cor}"></div>
+                </td>
+            </tr>
+        </table>
+        <hr/>
+        <input type="text" ng-model="contato.nome" placeholder="Nome" />
+        <input type="text" ng-model="contato.telefone" placeholder="Telefone" />
+        <select ng-model="contato.operadora" ng-options="operadora.nome for operadora in operadoras">
+            <option value="">Selecione uma operadora</option>
+        </select>
+        <button ng-click="adicionarContato(contato)" ng-disabled="!contato.nome || !contato.telefone">Adicionar Contato</button>
+        <button ng-click="apagarContatos(contatos)" ng-if="isContatoSelecionado(contatos)">Apagar Contatos</button>
+    </div>
+    <div ng-include="'footer.html'"></div>
 </body>
+
 </html>
