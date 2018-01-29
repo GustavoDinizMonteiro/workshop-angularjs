@@ -1,0 +1,25 @@
+{
+  "name": "workshop-angularjs-level-1",
+  "version": "0.1.0",
+  "description": "Description of project.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MeanWorkshops/workshop-angularjs-level-1.git"
+  },
+  "keywords": [
+    "mean",
+    "html",
+    "javascript",
+    "angularjs"
+  ],
+  "author": "Gustavo Monteiro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MeanWorkshops/workshop-angularjs-level-1/issues"
+  },
+  "homepage": "https://github.com/MeanWorkshops/workshop-angularjs-level-1#readme"
+}
